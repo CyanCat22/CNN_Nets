@@ -21,4 +21,14 @@ class Conv2D(nn.Module):
 def forward(self, x):
     return corr2d(x, self.weight) + self.bias
 
+"""Padding Stride 填充和步幅"""
+"""多个输入通道"""
+"""Pooling 
+最大池化层---输出窗口内最大值
+平均池化层"""
+def pool2d(X, pool_size, mode = 'max'):
+    
+
+
+
 
