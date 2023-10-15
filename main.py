@@ -27,8 +27,16 @@ def forward(self, x):
 最大池化层---输出窗口内最大值
 平均池化层"""
 def pool2d(X, pool_size, mode = 'max'):
-    
-
+    p_h, p_w = pool_size
+    Y = torch.zeros((X.shape[0] - p_h + 1 , X.shape[1] - p_w + 1))
+    for i in range(Y.shape[0]):
+        for j in range(Y.shape[1]):
+            if mode=='max':
+                Y[i, j] = X[i:i+p_h, j:j+p_w].max()
+            if mode=='avg':
+                Y[i, j] = X[i:i+p_h, j:j+p_w].mean()
+    return Y
+                
 
 
 
